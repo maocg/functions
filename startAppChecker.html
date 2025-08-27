@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>调起轻应用</title>
+    <title>调起应用</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,9 +49,9 @@
 </head>
 <body>
     <div class="container">
-        <h2>调起轻应用</h2>
+        <h2>调起应用</h2>
         <input type="text" id="app-url" value="hap://game/com.syhd.zjcjy.nearme.gamecenter">
-        <button onclick="checkAndLaunchApp()">调起轻应用</button>
+        <button onclick="checkAndLaunchApp()">调起应用</button>
     </div>
 
     <script>
@@ -65,8 +65,8 @@
 
             // 检测 URL 是否支持
             if (!url.startsWith(SUPPORTED_PREFIX)) {
-                alert("不支持该轻应用 URL，请检查输入！");
-                return;
+                //alert("不支持该轻应用 URL，请检查输入！");
+                //return;
             }
 
             // 调起轻应用
@@ -86,7 +86,7 @@
                 const endTime = Date.now();
                 // 如果页面未被隐藏且时间差小于 2000ms，说明调起失败
                 if (!document.hidden && endTime - startTime < 2000) {
-                    alert("轻应用不存在或调起失败！");
+                    alert("应用不存在或调起失败！");
                 }
             }, 1000); // 1秒后检测
         }
@@ -94,7 +94,7 @@
         // 监听页面隐藏事件
         document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
-                console.log("页面被隐藏，轻应用调起成功！");
+                console.log("页面被隐藏，应用调起成功！");
             }
         });
     </script>
